@@ -1,0 +1,66 @@
+/* styles */
+#secondFormContainer {
+  /*align form to row*/
+  display: flex;
+  flex-direction: row;
+}
+
+html {
+  height: 100%;
+  overflow: hidden; /*remove scroll bar*/
+}
+
+body {
+  /*center currency converter to middle of page*/
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#secondFormContainer p {
+  margin: 0;
+  padding: 1px;
+  border: 1px solid black;
+  flex-grow: 1; /*take up remaining width of container*/
+  background-color: white !important; /*over write colour*/
+}
+
+#currency-container {
+  width: 20em;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2em;
+  background-color: rgb(232, 194, 255);
+}
+
+#currency-container #firstFormContainer form #value1 {
+  flex-grow: 1;
+}
+
+form {
+  display: flex;
+}
+
+#firstInputCurrency {
+  margin-bottom: 1em;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+input {
+  border: 1px solid black;
+}
+
+input[type="number"] {
+  padding: 3px;
+}
+
+#value1::-webkit-outer-spin-button,  /*remove spinner*/
+  #value1::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

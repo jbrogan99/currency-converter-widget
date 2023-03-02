@@ -5,22 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <!--Link external CSS-->
     <title>Document</title>
   </head>
   <body>
-    <section>
-      <h3>Currency Converter</h3>
-      <form id="firstInputCurrency">
-        <input type="number" id="value1" name="value" placeholder="value" />
-        <select name="currencyFrom" id="currencyFrom"></select>
-      </form>
-      <span>
+    <div id="currency-container">
+      <!--No semantic meaning, used as container-->
+      <section id="firstFormContainer">
+        <h3>Currency Converter</h3>
+        <form id="firstInputCurrency">
+          <!--Form data-->
+          <input type="number" id="value1" name="value" placeholder="value" />
+          <select name="currencyFrom" id="currencyFrom"></select>
+        </form>
+      </section>
+      <section id="secondFormContainer">
         <p id="amount">1</p>
+        <!--Default value outside the form-->
         <form id="secondInputCurrency">
+          <!--Form data-->
           <select name="currencyTo" id="currencyTo"></select>
         </form>
-      </span>
-    </section>
+      </section>
+    </div>
+    <script src="./currency.js"></script>
+    <!--Load script after the html has loaded-->
   </body>
-  <script src="./currency.js"></script>
 </html>

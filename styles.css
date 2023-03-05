@@ -20,18 +20,25 @@ body {
 
 #secondFormContainer p {
   margin: 0;
-  padding: 1px;
+  padding: 5px;
   border: 1px solid black;
   flex-grow: 1; /*take up remaining width of container*/
   background-color: white !important; /*over write colour*/
+  font-size: 20px;
+  flex-grow: 1;
+  font-family: "Kanit", sans-serif;
 }
+/* 
+#currencyTo {
+  flex-grow: 2;
+} */
 
 #currency-container {
   width: 20em;
   border: 1px solid black;
   border-radius: 5px;
   padding: 2em;
-  background-color: rgb(232, 194, 255);
+  background: linear-gradient(to bottom, rgb(19, 19, 19) 5%, rgb(63, 63, 63));
 }
 
 #currency-container #firstFormContainer form #value1 {
@@ -44,23 +51,60 @@ form {
 
 #firstInputCurrency {
   margin-bottom: 1em;
+  box-sizing: border-box;
 }
 
 h3 {
   text-align: center;
   margin-top: 0;
+  font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  background: -webkit-linear-gradient(
+    0deg,
+    #be22ff 20%,
+    #ff279c 50%,
+    #ff981f 80%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 input {
   border: 1px solid black;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 input[type="number"] {
-  padding: 3px;
+  padding: 5px;
+  font-size: 20px;
+  font-family: "Kanit", sans-serif;
 }
 
 #value1::-webkit-outer-spin-button,  /*remove spinner*/
-  #value1::-webkit-inner-spin-button {
+#value1::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+aside {
+  display: flex;
+  justify-content: center;
+}
+
+#test {
+  width: 50%;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-5px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }

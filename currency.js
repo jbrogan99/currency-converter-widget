@@ -46,4 +46,18 @@ fetchText().then((names_values) => {
       dropDownOptions2.setAttribute("selected", "selected");
     }
   });
+
+  const convertIntoCurrencyPairs = (currencyOne, currencyTwo) => {
+    // calculates exchange rates
+    let firstCurrencyAndUSD = currencyOne / 1;
+    let USDandSecondCurrency = 1 / currencyTwo;
+    let exchangeRate = firstCurrencyAndUSD * USDandSecondCurrency;
+    return exchangeRate;
+  };
+
+  const getValueOfExchange = (value, exchangeRates) => {
+    // calculates the amount
+    let amount = value / exchangeRates;
+    return amount;
+  };
 });

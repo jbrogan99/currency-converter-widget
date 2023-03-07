@@ -46,18 +46,46 @@ fetchText().then((names_values) => {
       dropDownOptions2.setAttribute("selected", "selected");
     }
   });
-
-  const convertIntoCurrencyPairs = (currencyOne, currencyTwo) => {
-    // calculates exchange rates
-    let firstCurrencyAndUSD = currencyOne / 1;
-    let USDandSecondCurrency = 1 / currencyTwo;
-    let exchangeRate = firstCurrencyAndUSD * USDandSecondCurrency;
-    return exchangeRate;
-  };
-
-  const getValueOfExchange = (value, exchangeRates) => {
-    // calculates the amount
-    let amount = value / exchangeRates;
-    return amount;
-  };
+  convert(); //call convert function to show initial value
 });
+
+const convertIntoCurrencyPairs = (currencyOne, currencyTwo) => {
+  // calculates exchange rates
+  let firstCurrencyAndUSD = currencyOne / 1;
+  let USDandSecondCurrency = 1 / currencyTwo;
+  let exchangeRate = firstCurrencyAndUSD * USDandSecondCurrency;
+  return exchangeRate;
+};
+
+const getValueOfExchange = (value, exchangeRates) => {
+  // calculates the amount
+  let amount = value / exchangeRates;
+  return amount;
+};
+
+const convert = () => {
+  const ptag = document.getElementById("amount");
+  if (inputValue1.value < 0) {
+    // ensures no negative numbers can be added
+    return (ptag.innerHTML = "0.00");
+  }
+  let exchangeRates = convertIntoCurrencyPairs(
+    dropDownOne.value,
+    dropDownTwo.value
+  );
+  let amount = getValueOfExchange(inputValue1.value, exchangeRates); // passes the user input and value of exchange rates to function
+  ptag.innerHTML = amount.toFixed(2); // fixed to 2 decimal places
+};
+
+currencyForm1.addEventListener("keyup", convert); // input event listener
+dropDownOne.addEventListener("change", convert); // first drop down event listener
+dropDownTwo.addEventListener("change", convert); // second drop down event listener
+
+/*
+GDP/JPY
+
+GDP/USD = 1.2343
+USD/JPY = 110.215
+
+1.2343 x 110.215 = 143.12 <- currency exchange pair 
+*/

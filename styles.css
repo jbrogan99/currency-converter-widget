@@ -92,8 +92,9 @@ aside {
   justify-content: center;
 }
 
-#test {
-  width: 50%;
+#euro {
+  width: 150px;
+  object-fit: cover;
   animation: float 2s ease-in-out infinite;
 }
 

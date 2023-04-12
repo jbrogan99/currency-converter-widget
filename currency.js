@@ -2,7 +2,7 @@ async function fetchText() {
   /*fetch currency exchange data*/
   let response = await fetch(
     "https://api.currencyapi.com/v3/latest?apikey=UdkrueOHBjiJCVxKNOo6F25KOfyWGymxRKJZDYZt"
-  );
+  ); /*wait for the response*/
   let datax = await response.json();
   const data = datax.data;
   const arrayOfData = Object.entries(data);
@@ -80,12 +80,3 @@ const convert = () => {
 currencyForm1.addEventListener("keyup", convert); // input event listener
 dropDownOne.addEventListener("change", convert); // first drop down event listener
 dropDownTwo.addEventListener("change", convert); // second drop down event listener
-
-/*
-GDP/JPY
-
-GDP/USD = 1.2343
-USD/JPY = 110.215
-
-1.2343 x 110.215 = 143.12 <- currency exchange pair 
-*/

@@ -1,0 +1,20 @@
+{
+  "name": "currency_converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "currency.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node currency.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbrogan99/currcency-converter-widget.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbrogan99/currcency-converter-widget/issues"
+  },
+  "homepage": "https://github.com/jbrogan99/currcency-converter-widget#readme"
+}

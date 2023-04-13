@@ -3,7 +3,14 @@ async function fetchText() {
   let response = await fetch(
     "https://api.currencyapi.com/v3/latest?apikey=UdkrueOHBjiJCVxKNOo6F25KOfyWGymxRKJZDYZt"
   ); /*wait for the response*/
+  if (!response.ok) {
+    // throw new Error("Network response was not ok");
+    const errorMessage = document.getElementById("error-message");
+    errorMessage.innerText =
+      "An error occurred while loading data from the API, you have reached the maximum limit of calls. Try again later!";
+  }
   let datax = await response.json();
+
   const data = datax.data;
   const arrayOfData = Object.entries(data);
 
